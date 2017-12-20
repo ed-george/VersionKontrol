@@ -6,7 +6,7 @@ jdk:
 sudo: false
 
 install:
-  - ./gradle assemble
+  - ./gradlew assemble
 
 # cache between builds
 cache:
