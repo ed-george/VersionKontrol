@@ -28,6 +28,46 @@ fun main(args: Array<String>) {
 
 This library is especially helpful in checking if an application requires a force upgrade/update e.g. when a user's current version contains breaking changes
 
+## Build
+
+[![Build Status](https://travis-ci.org/ed-george/VersionKontrol.svg?branch=0.x)](https://travis-ci.org/ed-george/VersionKontrol)
+[![](https://jitpack.io/v/ed-george/VersionKontrol.svg)](https://jitpack.io/#ed-george/VersionKontrol)
+
+The latest snapshot version can also be found on [Jitpack](https://jitpack.io/#ed-george/VersionKontrol)
+
+### Gradle
+
+To get the latest build, use the following in your root build.gradle at the end of repositories:
+
+```groovy
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+dependencies {
+    compile 'com.github.ed-george:VersionKontrol:0.0.1'
+}
+```
+
+### Maven
+
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+
+<dependency>
+    <groupId>com.github.ed-george</groupId>
+    <artifactId>VersionKontrol</artifactId>
+    <version>0.0.1</version>
+</dependency>
+```
+
 ## Advanced usage
 
 The library currently uses `\\.` as the default delimiter within a version string, although this can be changed easily
