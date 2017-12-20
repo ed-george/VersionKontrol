@@ -1,0 +1,15 @@
+language: java
+
+jdk:
+  - oraclejdk8
+  
+sudo: false
+
+# script for build and release via Travis
+script: gradle/buildViaTravis.sh
+
+# cache between builds
+cache:
+  directories:
+  - $HOME/.m2
+  - $HOME/.gradle
