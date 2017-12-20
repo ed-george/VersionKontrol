@@ -1,0 +1,26 @@
+buildscript {
+    ext.kotlin_version = '1.2.10'
+    repositories { jcenter() }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+group = 'uk.co.edgeorgedev.versionkontrol'
+
+apply plugin: 'kotlin'
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:1.10.19'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.14'
+}
