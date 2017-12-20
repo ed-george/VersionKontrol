@@ -5,8 +5,8 @@ jdk:
   
 sudo: false
 
-# script for build and release via Travis
-script: gradle/buildViaTravis.sh
+install:
+  - ./gradle assemble
 
 # cache between builds
 cache:

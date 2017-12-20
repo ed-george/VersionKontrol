@@ -24,3 +24,7 @@ dependencies {
 task wrapper(type: Wrapper) {
     gradleVersion = '2.14'
 }
+
+if (project.hasProperty('release.useLastTag')) {
+    tasks.prepare.enabled = false
+}
