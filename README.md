@@ -7,7 +7,7 @@ A tiny Kotlin library to determine if a version string is newer when compared to
 Example
 
 ```kotlin
-import uk.co.edgeorgedev.versionkontrol.VersionKontrol.Companion.isNewerVersion
+import uk.co.edgeorgedev.versionkontrol.VersionKontrol.isNewerVersion
 
 fun main(args: Array<String>) {
 

@@ -1,6 +1,6 @@
 package uk.co.edgeorgedev.versionkontrol
 
-import uk.co.edgeorgedev.versionkontrol.VersionKontrol.Companion.isNewerVersion
+import uk.co.edgeorgedev.versionkontrol.VersionKontrol.isNewerVersion
 
 import org.junit.Assert.assertThat
 import org.junit.Test

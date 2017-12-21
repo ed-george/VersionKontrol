@@ -1,6 +1,6 @@
 package uk.co.edgeorgedev.versionkontrol.examples
 
-import uk.co.edgeorgedev.versionkontrol.VersionKontrol.Companion.isNewerVersion
+import uk.co.edgeorgedev.versionkontrol.VersionKontrol.isNewerVersion
 
 fun main(args: Array<String>) {
 
