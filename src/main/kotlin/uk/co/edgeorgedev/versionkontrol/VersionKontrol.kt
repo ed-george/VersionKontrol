@@ -8,7 +8,7 @@ object VersionKontrol {
     /**
      * Test if a version string is newer than another.
      *
-     * @since 0.1
+     * @since 0.0.1
      *
      * @param originalVersion the original version string.
      * @param comparedVersion the version string to compare to the original.
