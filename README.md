@@ -47,7 +47,7 @@ allprojects {
 }
 
 dependencies {
-    compile 'com.github.ed-george:VersionKontrol:0.0.1'
+    compile 'com.github.ed-george:VersionKontrol:0.0.2'
 }
 ```
 
@@ -64,7 +64,7 @@ dependencies {
 <dependency>
     <groupId>com.github.ed-george</groupId>
     <artifactId>VersionKontrol</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
 </dependency>
 ```
 
