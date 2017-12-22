@@ -7,19 +7,24 @@ A tiny Kotlin library to determine if a version string is newer when compared to
 Example
 
 ```kotlin
-import uk.co.edgeorgedev.versionkontrol.VersionKontrol.isNewerVersion
+import uk.co.edgeorgedev.versionkontrol.toVersionCode
+import kotlin.io.println as eval
 
 fun main(args: Array<String>) {
-
-    // The current version
-    val myCurrentVersion = "1.0.0"
-
-    // The updated version
-    val myUpdatedVersion = "1.0.1"
-
-    if (isNewerVersion(myCurrentVersion, myUpdatedVersion)) {
-        // Let user know an update is available or similar action
-    }
+    // Basic Example
+    val exampleVersion = "1.0.2".toVersionCode()
+    val exampleNewVersion = "1.1.0".toVersionCode()
+    
+    // Comparable using standard ==, !=, <, >, <=, >= operators
+    eval ( exampleNewVersion > exampleVersion )
+    eval ( exampleNewVersion )
+    
+    // Helper String extensions are also available
+    val rawVersionString = "2.3.1"
+    val rawVersionOlderString = "2.3.0"
+    
+    eval( rawVersionOlderString.isOlderVersionThan(rawVersionString) )
+    eval( rawVersionString.isNewerVersionThan(rawVersionOlderString) )
 }
 
 ```
@@ -47,7 +52,7 @@ allprojects {
 }
 
 dependencies {
-    compile 'com.github.ed-george:VersionKontrol:0.0.2'
+    compile 'com.github.ed-george:VersionKontrol:0.1.0'
 }
 ```
 
@@ -64,29 +69,27 @@ dependencies {
 <dependency>
     <groupId>com.github.ed-george</groupId>
     <artifactId>VersionKontrol</artifactId>
-    <version>0.0.2</version>
+    <version>0.1.0</version>
 </dependency>
 ```
 
 ## Advanced usage
 
-The library currently uses `\\.` as the default delimiter within a version string, although this can be changed easily
+The library currently uses `\p{Punct}+` as the default delimiter regular expression within a version string, although this can be changed easily
 
 
 ```kotlin
-import uk.co.edgeorgedev.versionkontrol.VersionKontrol.Companion.isNewerVersion
+import uk.co.edgeorgedev.versionkontrol.toVersionCode
 
 fun main(args: Array<String>) {
 
     // The current version
-    val myCurrentVersion = "1-0-0"
+    val myCurrentVersion = "1x0x0".toVersionCode(delimiter = "x")
 
     // The updated version
-    val myUpdatedVersion = "1-0-1"
+    val myUpdatedVersion = "1x0x1".toVersionCode(delimiter = "x")
 
-    if (isNewerVersion(myCurrentVersion, myUpdatedVersion, delimiter = "-")) {
-        // Let user know an update is available or similar action
-    }
+    //...
 }
 ```
 
